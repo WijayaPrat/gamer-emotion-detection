@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gamer Emotion Check</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+        .box {
+            background: #ddd;
+            padding: 40px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 8px;
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 30px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Hi Gamers 👾</h2>
+    <p>Type how you feel before starting your game</p>
+
+    <form method="POST">
+        <textarea name="text" placeholder="Write here...">{{ text_input }}</textarea><br>
+        <button type="submit">Check Emotion</button>
+    </form>
+
+    {% if emotion %}
+    <div class="result">
+        <p><strong>Detected Emotion:</strong> {{ emotion }}</p>
+        <p>{{ advice }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
